@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_ui/models/user_model.dart';
+import 'package:flutter_facebook_ui/widgets/widgets.dart';
 
 class CreatePostContainer extends StatelessWidget {
   const CreatePostContainer({Key? key, required this.currentUser})
@@ -13,11 +14,7 @@ class CreatePostContainer extends StatelessWidget {
       child: Column(children: [
         Row(
           children: [
-            CircleAvatar(
-              radius: 20.0,
-              backgroundColor: Colors.grey[200],
-              backgroundImage: NetworkImage(currentUser.imageUrl),
-            ),
+            ProfileAvatar(imageUrl: currentUser.imageUrl),
             const SizedBox(
               width: 8,
             ),
@@ -37,7 +34,7 @@ class CreatePostContainer extends StatelessWidget {
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             FlatButton.icon(
               onPressed: () => print('Live'),
-              icon: Icon(
+              icon: const Icon(
                 Icons.videocam,
                 color: Colors.red,
               ),
@@ -46,20 +43,20 @@ class CreatePostContainer extends StatelessWidget {
             const VerticalDivider(width: 8.0),
             FlatButton.icon(
               onPressed: () => print('Photo'),
-              icon: Icon(
+              icon: const Icon(
                 Icons.photo_library,
                 color: Colors.green,
               ),
-              label: Text('Photo'),
+              label: const Text('Photo'),
             ),
             const VerticalDivider(width: 8.0),
             FlatButton.icon(
               onPressed: () => print('Live'),
-              icon: Icon(
+              icon: const Icon(
                 Icons.video_call,
                 color: Colors.red,
               ),
-              label: Text('Room'),
+              label: const Text('Room'),
             ),
           ]),
         ),

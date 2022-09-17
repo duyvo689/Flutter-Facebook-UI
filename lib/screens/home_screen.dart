@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_ui/config/palette.dart';
 import 'package:flutter_facebook_ui/data/data.dart';
-import 'package:flutter_facebook_ui/widgets/circle_button.dart';
-import 'package:flutter_facebook_ui/widgets/create_post_container.dart';
+import 'package:flutter_facebook_ui/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -33,7 +32,11 @@ class HomeScreen extends StatelessWidget {
           SliverToBoxAdapter(
               child: CreatePostContainer(
             currentUser: currentUser,
-          ))
+          )),
+          SliverPadding(
+            padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
+            sliver: SliverToBoxAdapter(child: Rooms(onlineUsers: onlineUsers)),
+          ),
         ],
       ),
     );
